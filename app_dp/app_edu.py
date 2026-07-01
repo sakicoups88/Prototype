@@ -4,6 +4,19 @@ Here's our first attempt at using data to create a table:
 """
 import streamlit as st
 import pandas as pd
+
+
+
+# 各ページを指定
+page1 = st.Page("pages/01_input.py", title="研究データ")
+page2 = st.Page("pages/02_result.py", title="シミュレーション設定")
+
+# ナビゲーションの定義
+pg = st.navigation([page1, page2])
+pg.run()
+
+
+
 df = pd.DataFrame({
 'first column': [1, 2, 3, 4,5,6,10],
 'second column': [10, 20, 30, 40,50,60,100],
